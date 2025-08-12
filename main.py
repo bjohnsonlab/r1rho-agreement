@@ -1,5 +1,6 @@
 from dataclasses import dataclass
 from typing import ClassVar, Literal, Self
+import sys
 
 import numpy as np
 import matplotlib.pyplot as plt
@@ -62,7 +63,10 @@ def main():
     data = get_data()
     fig, ax = plt.subplots()
 
+    xmin, xmax = float("inf"), float("-inf")
     for temp, datum in data.items():
+        xmin = min(min(xmin, datum.eric_nu1[0]), datum.ringnmr_nu1[0])
+        xmax = max(max(xmax, datum.eric_nu1[-1]), datum.ringnmr_nu1[-1])
         color = ax.plot(
             datum.eric_nu1,
             datum.eric_r1rho,
@@ -76,6 +80,7 @@ def main():
             label="RING {} ({}°C)".format(datum.tau_str, temp),
         )
 
+    ax.set_xlim(xmin, xmax)
     ax.set_xlabel("$\\nu_1$ (kHz)")
     ax.set_ylabel("$R_{1\\rho}$ (s$^{-1}$)")
     ax.set_yscale("log")

@@ -4,7 +4,7 @@ Load MATLAB and run `eric.m`
 
 ### Parameters used
 
-* νC = 99.8 MHz => B₀ ≈ 396.8
+* νC = 99.8 MHz => B₀ ≈ 396.8 MHz
 * νR = 10 kHz
 * δ = -37 ppm => Δσ = -55.5 ppm
 * S² = 0.3295
