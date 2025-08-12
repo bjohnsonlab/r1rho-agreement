@@ -341,26 +341,9 @@ tau37 = DMS.t7.tau_fixed;
 tau57 = DMS.f7.tau_fixed;
 tau67 = DMS.si7.tau_fixed;
 tau77 = DMS.se7.tau_fixed;
-disp(R1rho_plot_77_fixed);
-fprintf("tau37: %s", tau37);
-fprintf("tau57: %s", tau57);
-fprintf("tau67: %s", tau67);
-fprintf("tau77: %s", tau77);
-save("r1rho_curves.mat", "X", "tau37", "R1rho_plot_37_fixed", "tau57", "R1rho_plot_57_fixed", "tau67", "R1rho_plot_67_fixed", "tau77", "R1rho_plot_77_fixed");
-X = linspace(1.49, 49.02, 98) * 1e3 * 2 *pi;
-disp(X);
-T = DMS.se7.tau_fixed;
-disp(T); disp(log10(T));
-r1rho = (3/4).*(CSA.*wI)^2.*((2/5)*...
-    (1-S).*(T./(1+((wI).*T).^2)))+(((1/6)*...
-    (CSA*wI)^2.*(((1/2).*(2/5)*(1-S).*...
-    (T./(1+((X-2.*MAS*2*pi).*T).^2)))+((2/5)*(1-S).*...
-    (T./(1+((X-MAS*2*pi).*T).^2)))+((2/5)*(1-S).*...
-    (T./(1+((X+MAS*2*pi).*T).^2)))+((1/2).*(2/5)*(1-S).*...
-    (T./(1.+((X+2*MAS*2*pi).*T).^2)))))-0.5*((3/4)*...
-    (CSA*wI)^2.*((2/5)*(1-S).*...
-    (T./(1+((wI).*T).^2)))));
-disp(mat2str(r1rho));
+
+save("data/eric.mat", "X", "tau37", "R1rho_plot_37_fixed", "tau57", "R1rho_plot_57_fixed", "tau67", "R1rho_plot_67_fixed", "tau77", "R1rho_plot_77_fixed");
+
 return;
 
 % Plot the R1rho curves for fixed S2 results
