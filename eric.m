@@ -1,5 +1,3 @@
-j% MATLAB code for generating Figure 3
-
 % Written by Eric G. Keeler
 % July 2022
 % ekeeler@nysbc.org; aem5@columbia.edu
@@ -7,7 +5,7 @@ j% MATLAB code for generating Figure 3
 
 % August 2025
 % Adapted by Simon G. Hulse for checking consistency with RING NMR
-% Load the Experimental DMS data taken from Quinn and McDermott, JMR 2012
+
 load('DMS_exp_val.mat')
 
 wI=99.8e6*2*pi;
